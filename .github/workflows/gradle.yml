@@ -26,5 +26,5 @@ jobs:
         with:
           gradle-version: release-candidate
       - run: |
-            run: ls ~/.gradle/caches
+            ls ~/.gradle/caches
             gradle test
