@@ -11,7 +11,6 @@ jobs:
         with:
           java-version: 11
           distribution: temurin
-          cache: gradle
       - name: Cache Gradle
         uses: actions/cache@v3
         with:
@@ -21,8 +20,11 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+        run: ls ~/.gradle/caches
       - name: Run Gradle Test
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: release-candidate
-      - run: gradle test
+      - run: |
+            run: ls ~/.gradle/caches
+            gradle test
