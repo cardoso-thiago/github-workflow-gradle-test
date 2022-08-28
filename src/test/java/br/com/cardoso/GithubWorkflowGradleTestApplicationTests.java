@@ -8,7 +8,7 @@ class GithubWorkflowGradleTestApplicationTests {
 
 	@Test
 	void contextLoads() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
 
 }

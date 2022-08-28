@@ -15,5 +15,4 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: release-candidate
-          gradle-home-cache-cleanup: true
       - run: gradle --build-cache test
