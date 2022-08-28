@@ -18,11 +18,11 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
             ~/.gradle/notifications
-          key: github-test
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
-            github-test
+            ${{ runner.os }}-gradle-
       - name: Run Gradle Test
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: release-candidate
-      - run: gradle test
+      - run: gradle --build-cache test
