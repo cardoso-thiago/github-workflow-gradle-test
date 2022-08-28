@@ -24,4 +24,4 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: release-candidate
-      - run: gradle --build-cache --gradle-user-home ~/.gradle/caches test
+      - run: gradle --build-cache --gradle-user-home ~/.gradle/ test
