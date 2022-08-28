@@ -20,7 +20,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-        run: ls ~/.gradle/caches
+      - run: ls ~/.gradle/caches
       - name: Run Gradle Test
         uses: gradle/gradle-build-action@v2
         with:
