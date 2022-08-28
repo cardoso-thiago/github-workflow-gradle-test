@@ -12,7 +12,8 @@ jobs:
           java-version: 11
           distribution: temurin
       - name: Run Gradle Test
-        uses: gradle/gradle-build-action@v2
+        uses: burrunan/gradle-cache-action@v1
         with:
-          gradle-version: release-candidate
-      - run: gradle test
+          job-id: jdk11
+          gradle-version: rc
+          arguments: test
