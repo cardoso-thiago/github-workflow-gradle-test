@@ -18,11 +18,11 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
             ~/.gradle/notifications
-          key: github-workflow-test
+          key: github-test
           restore-keys: |
-            github-workflow-test
+            github-test
       - name: Run Gradle Test
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: release-candidate
-      - run: gradle --build-cache test
+      - run: gradle test
